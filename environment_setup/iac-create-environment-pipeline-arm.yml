@@ -2,7 +2,7 @@ pr: none
 trigger: none
 
 variables:
-- group: mlops_proj_grp
+- group: mlops-vk-vg
 
 stages:
 - stage: 'Dev'
@@ -16,7 +16,7 @@ stages:
     steps:
     - task: AzureResourceGroupDeployment@2
       inputs:
-        azureSubscription: '$(WORKSPACE_SVC_CONNECTOIN)'
+        azureSubscription: '$(AZURE_RM_SVC_CONNECTOIN)'
         action: 'Create Or Update Resource Group'
         resourceGroupName: '$(RESOURCE_GROUP)'
         location: $(LOCATION)
